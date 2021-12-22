@@ -1,4 +1,4 @@
-<!DOCTYPE HTML5>
+<!DOCTYPE html>
 <html lang="pt-br">
 
   <head>
@@ -16,9 +16,21 @@
     <main>
       <h1>Usando JavaScript pela primeira vez</h1>
       <script>
-          alert("Este é um popup em JavaScript");
+          // alert("Este é um popup em JavaScript");
+          /*Uso do ponto e vírgula no final de uma instrução JavaScript é opcional.
+          Ex.: alert("Este é um popup em JavaScript sem o ;")
+          Contudo, ao avançar nesta linguagem, determinados processamentos de código podem resultar em algo não esperado na ausência do ponto e vírgula.*/
+          var ano = 2021;
+          document.write("A minha idade atual é ");
+          document.write(ano - 2000);
+        
+          document.write("<br>Estamos no ano de "+"20"+"21");
+          //document.write("<br>Estamos no ano de "+"20"+ 21); Também é concatenado, pq o JS converte o número para string.
+        
+          var media = (39 + 20 + 41)/3;
+          //Fazendo médias aritméticas com arredondamento
+          document.write('A média das idades é ' + Math.round(media));
       </script>
-      Gostou?
     </main>
     
     <footer>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+      <title>First Steps HTML e JavaScript</title>
+      <meta charset="UTF-8">
+      <!-- Mobile Adaptation -->
+      <meta name="viewport" content="width=device-width">
+  </head>
+
+  <body>
+    <header>
+      
+    </header>
+    
+    <main>
+      <h1>Posto de Gasolina - JavaScript</h1>
+      <h3>Álcool ou Gasolina ?</h3>
+      <script>
+          function pulaLinha(){
+            document.write("<br><hr><br>");
+          }
+        
+          function inserirDivisoria(){
+            document.write("<hr><hr><br>");
+          }
+        
+          function mostra(texto){
+            document.write(texto)
+            pulaLinha();
+          }
+          
+          function mostraBig(texto){
+            document.write("<big>" + texto + "</big>")
+            pulaLinha();
+          }
+        
+          var tanque = 40;
+          var caminhoComGasolina = 480;
+          var caminhoComAlcool = 300;
+          var consumoDeGasolina = 0;
+          var consumoDeAlcool = 0;
+        
+          consumoDeGasolina = (caminhoComGasolina / tanque);
+          consumoDeAlcool = (caminhoComAlcool / tanque);
+        
+          mostra("O seu carro faz " + consumoDeGasolina + " Km/l <br>");
+          mostra("O seu carro faz " + consumoDeAlcool + " Km/l <br>");
+          
+          inserirDivisoria();
+        
+          mostraBig("O seu carro faz " + consumoDeGasolina + " Km/l <br>");
+          mostraBig("O seu carro faz " + consumoDeAlcool + " Km/l <br>");
+        
+//          document.write("O seu carro faz " + consumoDeGasolina + " Km/l <br>");
+          
+//          document.write("E o seu carro faz " + consumoDeAlcool + " Km/l");
+      </script>
+    </main>
+    
+    <footer>
+      
+    </footer>
+  </body>
+</html>
