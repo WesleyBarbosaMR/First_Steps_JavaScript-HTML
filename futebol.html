@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+      <title>Pontuação Times de Futebol</title>
+      <meta charset="UTF-8">
+      <!-- Mobile Adaptation -->
+      <meta name="viewport" content="width=device-width">
+  </head>
+
+  <body>
+    <header>
+      
+    </header>
+    
+    <main>
+      <h1>Pontuação de Times no Campeonato de Futebol</h1>
+      
+      <script>
+        function pulaLinha(){
+          document.write("<br>");
+          document.write("<br>");
+        }
+        
+        function mostra(frase){
+          document.write(frase);
+          pulaLinha();
+        }
+        
+        var vitorias = parseInt(prompt("Informe o número de vitórias: "));
+        var empates = parseInt(prompt("Informe o número de empates: "));
+        var pontos = vitorias*3 + empates;
+        
+        mostra("O seu time pontuou " +pontos+ " <strong>pontos<strong>")
+        
+        if(pontos > 28){
+          mostra("Seu time está melhor do que o ano passado");
+        }else if(pontos < 28){
+          mostra("Seu time está pior do que o ano passado");
+        }else{
+          mostra("Seu time está igual ao ano passado");
+        }       
+        
+      </script>
+    </main>
+    
+    <footer>
+      
+    </footer>
+  </body>
+</html>
