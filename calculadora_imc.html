@@ -34,7 +34,20 @@
           var massaUser = prompt("Informe qual o seu peso em Kg (Ex: 70 Kg): ");
           var alturaUser = prompt("Informe qual a sua altura em metros (Ex: 1.80 m): ");
           var imcResult = imcCalculate(massaUser,alturaUser)
-          mostra(nomeUser + ", o seu IMC é: " + Math.round(imcResult));
+          mostra(nomeUser + ", o seu IMC é: " + Math.round((imcResult + Number.EPSILON) * 100) / 100);
+        
+          if(imcResult < 18.5){
+            mostra("Magreza - Abaixo do recomendado");
+          }
+          if(18.5 < imcResult && imcResult < 24.9){
+           mostra("Ideal - Dentro do recomendado"); 
+          }
+          if(24.9 < imcResult && imcResult < 30){
+           mostra("Sobrepeso - Um pouco acima do recomendado"); 
+          }
+          if(imcResult > 30) {
+            mostra("Obesidade - Muito acima do recomendado"); 
+          }
           
       </script>
     </main>
