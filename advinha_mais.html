@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+      <title>Advinha Mais</title>
+      <meta charset="UTF-8">
+      <!-- Mobile Adaptation -->
+      <meta name="viewport" content="width=device-width">
+  </head>
+
+  <body>
+    <header>
+      
+    </header>
+    
+    <main>
+      <h1>Advinha Mais</h1>
+      <input/>
+      <button>Compare com o meu segredo</button>
+      <script>
+          function pulaLinha(){
+            document.write("<br>");
+            document.write("<br>");
+          }
+
+          function mostra(frase){
+            document.write(frase);
+            pulaLinha();
+          }
+        
+          var segredo = Math.round(Math.random() * 10);
+        
+          var input = document.querySelector("input");
+          input.focus();
+        
+          function verifica(){
+            if(input.value == segredo) {
+              alert("Você ACERTOU ! ");
+            }else {
+              alert("Você ERROU !");
+            }
+            input.value = "";
+            input.focus();
+          }
+        
+          var button = document.querySelector("button");
+          button.onclick = verifica;
+        
+          
+        
+      </script>
+    </main>
+    
+    <footer>
+      
+    </footer>
+  </body>
+</html>
