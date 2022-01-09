@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+      <title>Login and Pass</title>
+      <meta charset="UTF-8">
+      <!-- Mobile Adaptation -->
+      <meta name="viewport" content="width=device-width">
+  </head>
+
+  <body>
+    <header>
+      
+    </header>
+    
+    <main>
+      <h1>Login and Pass</h1>
+      <script>
+        function pulaLinha(){
+          document.write("<br>");
+          document.write("<br>");
+          }
+
+        function mostra(frase){
+          document.write(frase);
+          pulaLinha();
+        }
+        
+        var loginCadastrado = "wesley";
+        var senhaCadastrada = "wesley321";
+        
+        for(var tentativas = 1; tentativas <=3; tentativas++){
+          var loginInformado = prompt("Informe seu login");
+          var senhaInformada = prompt("Informe sua senha");
+          
+          if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada) {
+              mostra("Bem-vindo ao sistema " + loginInformado);
+              break;
+          } else {
+              alert("Login inválido. Tente novamente");
+          }
+          if(tentativas == 3){
+            alert("Tentativas esgotadas")
+          }
+        }
+           
+      </script>
+    </main>
+    
+    <footer>
+      
+    </footer>
+  </body>
+</html>
+
+    

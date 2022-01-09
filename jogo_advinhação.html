@@ -19,68 +19,44 @@
           function pulaLinha(){
           document.write("<br>");
           document.write("<br>");
-        }
-        
-        function mostra(frase){
-          document.write(frase);
-          pulaLinha();
-        }
-         
-        function sorteia(n){
-          return Math.round(Math.random()*n);
-        }
-        
-        var n = parseInt(prompt("Até que número deseja sortear?"))
-        
-        var numPensado = sorteia(n);
-        
-        
-        var chute1 = parseInt(prompt("Vc terá 3 tentativas para acertar o número pensado! <br> Digite seu primeiro chute: "));
-        
-        if(chute1 != numPensado){
-          alert("Você errou ! 🙁");
-          if(chute1 > numPensado){
-            alert("O número que vc chutou é maior que o número pensado");
-          }else{
-            alert("O número que vc chutou é menor que o número pensado");
           }
+
+          function mostra(frase){
+            document.write(frase);
+            pulaLinha();
+          }
+
+          function sorteia(n){
+            return Math.round(Math.random()*n);
+          }
+
+          var n = parseInt(prompt("Até que número deseja sortear?"))
+
+          var numPensado = sorteia(n);
           
-          var chute2 = parseInt(prompt("Restam 2 tentativas! <br> Digite seu segundo chute: "));
-          
-          if(chute2 != numPensado){
-            alert("Você errou ! 🙁");
-            if(chute2 > numPensado){
-              alert("O número que vc chutou é maior que o número pensado");
-            }else{
-              alert("O número que vc chutou é menor que o número pensado");
-            }
-            
-            var chute3 = parseInt(prompt("Resta apenas mais uma tentativa! <br> Digite seu terceiro chute: "));
-          
-            if(chute3 != numPensado){
+          alert("Vc terá 3 tentativas para acertar o número pensado!")
+          for(var tentativas = 1; tentativas<=3; tentativas++){
+            var chute = parseInt(prompt("Digite seu chute: "));
+            if(chute != numPensado){
               alert("Você errou ! 🙁");
-              if(chute3 > numPensado){
+              if(chute > numPensado){
                 alert("O número que vc chutou é maior que o número pensado");
               }else{
                 alert("O número que vc chutou é menor que o número pensado");
               }
-              mostra("Acabaram suas tentativas 🙁!")
-              mostra("O número pensado foi " +numPensado);
+
+              if(tentativas==3){
+                mostra("Acabaram suas tentativas 🙁!")
+                mostra("O número pensado foi " +numPensado);
+                break;
+              }
             }else{
               mostra("Você acertou ! 🙂");
               mostra("O número pensado foi " +numPensado);
+              break;
             }
-          }else{
-            mostra("Você acertou ! 🙂");
-            mostra("O número pensado foi " +numPensado);
           }
           
-        }else{
-          mostra("Você acertou ! 🙂");
-          mostra("O número pensado foi " +numPensado);
-        }
-        
-        
         
       </script>
     </main>

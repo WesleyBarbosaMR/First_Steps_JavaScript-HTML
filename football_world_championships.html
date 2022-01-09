@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+      <title>Football World Championships</title>
+      <meta charset="UTF-8">
+      <!-- Mobile Adaptation -->
+      <meta name="viewport" content="width=device-width">
+  </head>
+
+  <body>
+    <header>
+      
+    </header>
+    
+    <main>
+      <h1>Football World Championships</h1>
+      <script>
+        function pulaLinha(){
+          document.write("<br>");
+          document.write("<br>");
+          }
+
+        function mostra(frase){
+          document.write(frase);
+          pulaLinha();
+        }
+        
+        /*var anoCopa = 1930;
+        while(anoCopa<=2022){
+          alert("Teve copa em " +anoCopa);
+          anoCopa+=4;
+        }*/
+        
+        var anoEscolha = parseInt(prompt("Até que ano vc deseja saber os anos em tiveram copas do mundo?"));
+        
+        for(anoCopa=1930; anoCopa<=anoEscolha; anoCopa+=4){
+          mostra("Teve copa em " +anoCopa);
+        }
+        anoCopa-=4;
+        mostra("Fim! O último ano de copa do mundo antes de " +anoEscolha+ " foi " +anoCopa);
+        
+        
+      </script>
+    </main>
+    
+    <footer>
+      
+    </footer>
+  </body>
+</html>
