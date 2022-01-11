@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+      <title>Sua Receita</title>
+      <meta charset="UTF-8">
+      <!-- Mobile Adaptation -->
+      <meta name="viewport" content="width=device-width">
+  </head>
+
+  <body>
+    <header>
+      
+    </header>
+    
+    <main>
+      <h1>Sua receita</h1>
+      <script>
+          function pulaLinha(){
+          document.write("<br>");
+          document.write("<br>");
+          }
+
+          function mostra(frase){
+            document.write(frase);
+            pulaLinha();
+          }
+          
+          var ingredientes = [];
+          
+          var receita = prompt("Qual o nome da receita?");
+        
+          var qtde = parseInt(prompt("Quantos ingredientes tem a sua receita?"));
+        
+          while (isNaN(qtde)){
+            alert("Entrada Inválida! Por favor digite um número.");
+            qtde = parseInt(prompt("Quantos ingredientes tem a sua receita?"));
+          }
+
+          var cont = 1;
+
+          while( cont <= qtde) {
+
+              var ingrediente = prompt("Informe o ingrediente " + cont);
+
+              var found = false;
+
+              for(var i = 0; i < ingredientes.length; i++){
+                  if( ingredientes[i] == ingrediente){
+                      found = true;
+                      break;
+                  }
+              }
+
+              if(found == false){
+                  ingredientes.push(ingrediente);
+                  cont++;
+              }
+          }
+          document.write("<h2>"+receita+"</h2>");
+          mostra(ingredientes);
+      </script>
+    </main>
+    
+    <footer>
+      
+    </footer>
+  </body>
+</html>
+<meta charset="UTF-8">
+
