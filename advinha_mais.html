@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
   <head>
-      <title>Advinha Mais</title>
+      <title>Advinha 2.0</title>
       <meta charset="UTF-8">
       <!-- Mobile Adaptation -->
       <meta name="viewport" content="width=device-width">
@@ -14,7 +14,7 @@
     </header>
     
     <main>
-      <h1>Advinha Mais</h1>
+      <h1>Advinha 2.0</h1>
       <input/>
       <button>Compare com o meu segredo</button>
       <script>
@@ -28,26 +28,65 @@
             pulaLinha();
           }
         
-          var segredo = Math.round(Math.random() * 10);
+          /*var segredos = [sorteia(),sorteia(),sorteia(),sorteia()];*/
         
+          function sorteia(){
+            return Math.round(Math.random()*10);
+          }
+        
+          function sorteiaNumeros(qtde){
+            var segredos = [];
+            var i = 1;
+            
+            while(i <= qtde){
+              var verifyRepetition = sorteia();
+              
+              if(verifyRepetition != 0){
+                var found = false; 
+              
+                for(var j = 0; j < segredos.length; j++){
+                  if(segredos[j] == verifyRepetition){
+                    found = true;
+                    break;
+                  }
+                }
+
+                if(found == false){
+                  segredos.push(verifyRepetition);
+                  i++;
+                }
+              }
+            }
+            return segredos;
+          }
+          
+          var n = parseInt(prompt("Qual a quantidade de números q vc quer advinhar"))
+          var segredos = sorteiaNumeros(n);
+          
           var input = document.querySelector("input");
           input.focus();
-        
+                  
           function verifica(){
-            if(input.value == segredo) {
-              alert("Você ACERTOU ! ");
-            }else {
-              alert("Você ERROU !");
+            
+            var verify = false;            
+            for(var cont = 0; cont < segredos.length; cont++){
+              
+              if(input.value == segredos[cont]) {
+                alert("Você ACERTOU um dos números! ");
+                verify = true;
+                break;
+              }
+            }
+            if (verify == false){
+              alert("Você ERROU, esse não é um dos números sorteados !");
             }
             input.value = "";
             input.focus();
           }
-        
+          
           var button = document.querySelector("button");
           button.onclick = verifica;
-        
-          
-        
+                
       </script>
     </main>
     
